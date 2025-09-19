@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.625rem;
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(222.2 84% 4.9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222.2 84% 4.9%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222.2 84% 4.9%);
+  --primary: hsl(222.2 47.4% 11.2%);
+  --primary-foreground: hsl(210 40% 98%);
+  --secondary: hsl(210 40% 96%);
+  --secondary-foreground: hsl(222.2 84% 4.9%);
+  --muted: hsl(210 40% 96%);
+  --muted-foreground: hsl(215.4 16.3% 46.9%);
+  --accent: hsl(210 40% 96%);
+  --accent-foreground: hsl(222.2 84% 4.9%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --border: hsl(214.3 31.8% 91.4%);
+  --input: hsl(214.3 31.8% 91.4%);
+  --ring: hsl(222.2 84% 4.9%);
+  --chart-1: hsl(12 76% 61%);
+  --chart-2: hsl(173 58% 39%);
+  --chart-3: hsl(197 37% 24%);
+  --chart-4: hsl(43 74% 66%);
+  --chart-5: hsl(27 87% 67%);
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(222.2 84% 4.9%);
+  --sidebar-primary: hsl(222.2 47.4% 11.2%);
+  --sidebar-primary-foreground: hsl(210 40% 98%);
+  --sidebar-accent: hsl(210 40% 96%);
+  --sidebar-accent-foreground: hsl(222.2 84% 4.9%);
+  --sidebar-border: hsl(214.3 31.8% 91.4%);
+  --sidebar-ring: hsl(222.2 84% 4.9%);
+}
+
+.dark {
+  --background: hsl(222.2 84% 4.9%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(222.2 47.4% 11.2%);
+  --card-foreground: hsl(210 40% 98%);
+  --popover: hsl(222.2 47.4% 11.2%);
+  --popover-foreground: hsl(210 40% 98%);
+  --primary: hsl(210 40% 98%);
+  --primary-foreground: hsl(222.2 47.4% 11.2%);
+  --secondary: hsl(217.2 32.6% 17.5%);
+  --secondary-foreground: hsl(210 40% 98%);
+  --muted: hsl(217.2 32.6% 17.5%);
+  --muted-foreground: hsl(215 20.2% 65.1%);
+  --accent: hsl(217.2 32.6% 17.5%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --border: hsl(217.2 32.6% 17.5%);
+  --input: hsl(217.2 32.6% 17.5%);
+  --ring: hsl(212.7 26.8% 83.9%);
+  --chart-1: hsl(220 70% 50%);
+  --chart-2: hsl(160 60% 45%);
+  --chart-3: hsl(30 80% 55%);
+  --chart-4: hsl(280 65% 60%);
+  --chart-5: hsl(340 75% 55%);
+  --sidebar: hsl(222.2 47.4% 11.2%);
+  --sidebar-foreground: hsl(210 40% 98%);
+  --sidebar-primary: hsl(210 40% 98%);
+  --sidebar-primary-foreground: hsl(222.2 47.4% 11.2%);
+  --sidebar-accent: hsl(217.2 32.6% 17.5%);
+  --sidebar-accent-foreground: hsl(210 40% 98%);
+  --sidebar-border: hsl(217.2 32.6% 17.5%);
+  --sidebar-ring: hsl(212.7 26.8% 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Performance optimizations */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* Prevent layout shift */
+.aspect-ratio {
+  @apply aspect-video;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Article content styling */
+.article-content {
+  /* Headings */
+  h1 {
+    @apply text-3xl font-bold text-white mb-6 mt-8;
+  }
+  
+  h2 {
+    @apply text-2xl font-bold text-white mb-4 mt-6;
+  }
+  
+  h3 {
+    @apply text-xl font-semibold text-white mb-3 mt-5;
+  }
+  
+  h4 {
+    @apply text-lg font-semibold text-white mb-2 mt-4;
+  }
+  
+  /* Paragraphs */
+  p {
+    @apply mb-4 text-gray-300 leading-relaxed;
+  }
+  
+  /* Lists */
+  ul, ol {
+    @apply mb-4 ml-6 text-gray-300;
+  }
+  
+  li {
+    @apply mb-2;
+  }
+  
+  ul li {
+    @apply list-disc;
+  }
+  
+  ol li {
+    @apply list-decimal;
+  }
+  
+  /* Text formatting */
+  strong {
+    @apply font-bold text-white;
+  }
+  
+  em {
+    @apply italic;
+  }
+  
+  /* Links */
+  a {
+    @apply text-blue-400 hover:text-blue-300 underline;
+  }
+  
+  /* Blockquotes */
+  blockquote {
+    @apply border-l-4 border-gray-600 pl-4 italic text-gray-400 my-4;
+  }
+  
+  /* Code */
+  code {
+    @apply bg-gray-800 text-gray-200 px-2 py-1 rounded text-sm font-mono;
+  }
+  
+  pre {
+    @apply bg-gray-900 text-gray-200 p-4 rounded-lg overflow-x-auto my-4;
+  }
+  
+  pre code {
+    @apply bg-transparent p-0;
+  }
+  
+  /* Images */
+  img {
+    @apply rounded-lg my-4;
+  }
+  
+  /* Tables */
+  table {
+    @apply w-full border-collapse border border-gray-700 my-4;
+  }
+  
+  th, td {
+    @apply border border-gray-700 px-4 py-2 text-left;
+  }
+  
+  th {
+    @apply bg-gray-800 text-white font-semibold;
+  }
+  
+  td {
+    @apply text-gray-300;
+  }
+}
+
+/* Loading states */
+.skeleton {
+  @apply animate-pulse bg-gray-800 rounded;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    @apply hidden;
+  }
+  
+  body {
+    @apply bg-white text-black;
+  }
+  
+  .article-content {
+    @apply text-black;
+  }
+  
+  .article-content h1,
+  .article-content h2,
+  .article-content h3,
+  .article-content h4,
+  .article-content strong {
+    @apply text-black;
+  }
+}
