@@ -1,10 +1,9 @@
-import { notFound } from 'next/navigation';
-import { ArticleDetail } from '@/components/news/ArticleDetail';
-import { Header } from '@/components/news/Header';
-import { Footer } from '@/components/news/Footer';
-import { SEO } from '@/components/seo/SEO';
-import { StructuredData } from '@/components/seo/StructuredData';
-import { googleSheetsService } from '@/lib/google/sheets';
+import { notFound } from "next/navigation";
+import { ArticleDetail } from "@/components/news/ArticleDetail";
+import { Footer } from "@/components/news/Footer";
+import { SEO } from "@/components/seo/SEO";
+import { StructuredData } from "@/components/seo/StructuredData";
+import { googleSheetsService } from "@/lib/google/sheets";
 
 // ISR: Revalidate this page every 24 hours (86400 seconds)
 export const revalidate = 86400;
@@ -17,55 +16,57 @@ interface ArticlePageProps {
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
-  
+
   // Add logging for debugging
-  console.log('ArticlePage: Attempting to fetch article with slug:', slug);
-  
+  console.log("ArticlePage: Attempting to fetch article with slug:", slug);
+
   // Fetch article with caching
   const article = await googleSheetsService.getArticleByUrl(slug);
 
-  console.log('ArticlePage: Article fetched:', article ? 'Found' : 'Not found');
-  
+  console.log("ArticlePage: Article fetched:", article ? "Found" : "Not found");
+
   if (!article) {
-    console.log('ArticlePage: Article not found, triggering 404');
+    console.log("ArticlePage: Article not found, triggering 404");
     notFound();
   }
 
   // Generate structured data for article
   const articleStructuredData = {
-    type: 'article' as const,
+    type: "article" as const,
     data: {
       title: article.title,
       description: article.preview,
       url: `https://degennews.com/articles/${slug}`,
       datePublished: article.date,
-      author: 'degenNews',
+      author: "DUF",
       category: article.category,
-      image: 'https://degennews.com/og-default.jpg',
+      image: "https://degennews.com/og-default.jpg",
       breadcrumb: {
-        '@type': 'BreadcrumbList',
+        "@type": "BreadcrumbList",
         itemListElement: [
           {
-            '@type': 'ListItem',
+            "@type": "ListItem",
             position: 1,
-            name: 'Home',
-            item: 'https://degennews.com/'
+            name: "Home",
+            item: "https://degennews.com/",
           },
           {
-            '@type': 'ListItem',
+            "@type": "ListItem",
             position: 2,
             name: article.category,
-            item: `https://degennews.com/categories/${encodeURIComponent(article.category.toLowerCase().replace(/\s+/g, '-'))}`
+            item: `https://degennews.com/categories/${encodeURIComponent(
+              article.category.toLowerCase().replace(/\s+/g, "-")
+            )}`,
           },
           {
-            '@type': 'ListItem',
+            "@type": "ListItem",
             position: 3,
             name: article.title,
-            item: `https://degennews.com/articles/${slug}`
-          }
-        ]
-      }
-    }
+            item: `https://degennews.com/articles/${slug}`,
+          },
+        ],
+      },
+    },
   };
 
   return (
@@ -75,10 +76,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         description={article.preview}
         structuredData={articleStructuredData}
       />
-      
-      <div className="min-h-screen bg-black text-white">
-        <Header />
-        <main className="container mx-auto px-4 py-8">
+
+      <div className="min-h-screen text-foreground">
+        <main className="px-4 py-8">
           <ArticleDetail article={article} />
         </main>
         <Footer />

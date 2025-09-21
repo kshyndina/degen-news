@@ -23,7 +23,7 @@ export async function GET() {
         publishedAt: article.date,
         updatedAt: article.date,
         author: {
-          name: 'degenNews',
+          name: 'DUF',
           url: baseUrl
         },
         images: [
@@ -59,7 +59,7 @@ export async function GET() {
         rssUrl: `${baseUrl}/rss.xml`,
         sitemapUrl: `${baseUrl}/sitemap.xml`,
         siteInfo: {
-          name: 'degenNews',
+          name: 'DUF',
           description: 'Latest crypto security news, trading insights, whale watching strategies, and market analysis for degens.',
           url: baseUrl,
           language: 'en',

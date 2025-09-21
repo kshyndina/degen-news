@@ -14,7 +14,7 @@ export async function GET() {
      xmlns:atom="http://www.w3.org/2005/Atom">
   
   <channel>
-    <title>degenNews - Crypto Security News</title>
+    <title>DUF - Crypto Security News</title>
     <description>Latest crypto security news, trading insights, whale watching strategies, and market analysis for degens.</description>
     <link>${baseUrl}/</link>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml" />
@@ -23,7 +23,7 @@ export async function GET() {
     <ttl>60</ttl>
     <image>
       <url>${baseUrl}/logo.png</url>
-      <title>degenNews</title>
+      <title>DUF</title>
       <link>${baseUrl}/</link>
       <width>144</width>
       <height>144</height>
@@ -42,7 +42,7 @@ export async function GET() {
       <category><![CDATA[${article.category}]]></category>
       ${article.tags.map(tag => `<category><![CDATA[${tag}]]></category>`).join('\n      ')}
       <content:encoded><![CDATA[${article.content}]]></content:encoded>
-      <author>degenNews</author>
+      <author>DUF</author>
     </item>`;
     }).join('')}
     

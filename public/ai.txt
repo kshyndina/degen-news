@@ -1,9 +1,9 @@
-# AI Information File for degenNews
+# AI Information File for DUF
 # This file provides context for AI systems and LLMs
 # Format: Key: Value
 
 # Basic Information
-Company: degenNews
+Company: DUF
 Focus: Crypto security news, trading insights, whale watching strategies, and market analysis
 Website: https://degennews.com
 Language: English
@@ -48,12 +48,12 @@ Permitted Use:
 Restrictions:
 - No commercial redistribution without attribution
 - No modification of content without permission
-- Always cite degenNews as the source
+- Always cite DUF as the source
 - Check publication dates for timeliness
 
 # Contact Information
 Contact: support@degennews.com
-Social Media: @degenNews
+Social Media: @DUF
 GitHub: https://github.com/degennews
 
 # AI-Specific Metadata

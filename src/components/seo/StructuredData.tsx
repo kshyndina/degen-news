@@ -12,7 +12,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         return {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
-          name: 'degenNews',
+          name: 'DUF',
           url: baseUrl,
           description: 'Latest crypto security news, trading insights, and market analysis',
           potentialAction: {
@@ -22,7 +22,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           },
           publisher: {
             '@type': 'Organization',
-            name: 'degenNews',
+            name: 'DUF',
             logo: {
               '@type': 'ImageObject',
               url: `${baseUrl}/logo.png`
@@ -39,7 +39,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           url: `${baseUrl}${data.path}`,
           isPartOf: {
             '@type': 'WebSite',
-            name: 'degenNews',
+            name: 'DUF',
             url: baseUrl
           },
           breadcrumb: data.breadcrumb || null
@@ -57,11 +57,11 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           dateModified: data.dateModified || data.datePublished,
           author: {
             '@type': 'Organization',
-            name: 'degenNews'
+            name: 'DUF'
           },
           publisher: {
             '@type': 'Organization',
-            name: 'degenNews',
+            name: 'DUF',
             logo: {
               '@type': 'ImageObject',
               url: `${baseUrl}/logo.png`

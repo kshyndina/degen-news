@@ -58,7 +58,7 @@ export async function GET() {
     <priority>0.9</priority>
     <news:news>
       <news:publication>
-        <news:name>degenNews</news:name>
+        <news:name>DUF</news:name>
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>${new Date(article.date).toISOString()}</news:publication_date>

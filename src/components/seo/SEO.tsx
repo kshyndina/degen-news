@@ -15,7 +15,7 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = 'degenNews - Crypto Security News & Trading Insights',
+  title = 'DUF - Crypto Security News & Trading Insights',
   description = 'Latest crypto security news, trading insights, whale watching strategies, and market analysis for degens.',
   image,
   url,
@@ -36,7 +36,7 @@ export function SEO({
       {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="author" content="degenNews" />
+      <meta name="author" content="DUF" />
       <link rel="canonical" href={fullUrl} />
       
       {/* Advanced Robots Meta */}
@@ -51,7 +51,7 @@ export function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image || defaultImage} />
       <meta property="og:url" content={fullUrl} />
-      <meta property="og:site_name" content="degenNews" />
+      <meta property="og:site_name" content="DUF" />
       <meta property="og:locale" content="en_US" />
       
       {type === 'article' && publishedTime && (
@@ -74,8 +74,8 @@ export function SEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image || defaultImage} />
-      <meta name="twitter:site" content="@degenNews" />
-      <meta name="twitter:creator" content="@degenNews" />
+      <meta name="twitter:site" content="@DUF" />
+      <meta name="twitter:creator" content="@DUF" />
       
       {/* Geo Signals */}
       <meta name="geo.region" content="US" />
