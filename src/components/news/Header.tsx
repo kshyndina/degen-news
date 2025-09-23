@@ -25,7 +25,7 @@ export function Header() {
 
   return (
     <header className="border-b border-gray-800">
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 py-4 sm:py-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
             <img
@@ -39,17 +39,17 @@ export function Header() {
             <span className="text-2xl font-bold text-white">degenNews</span>
           </Link>
           
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-4">
             <Link href="/" className="text-gray-400 hover:text-white transition-colors">
               Home
             </Link>
             {!loading && categories.length > 0 && (
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-3">
                 {categories.map((category) => (
                   <Link
                     key={category}
                     href={`/categories/${encodeURIComponent(category.toLowerCase().replace(/\s+/g, '-'))}`}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-400 hover:text-white transition-colors text-sm whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px] sm:max-w-[150px]"
                     dangerouslySetInnerHTML={{ __html: category }}
                   />
                 ))}

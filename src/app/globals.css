@@ -76,7 +76,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
 
@@ -161,7 +161,7 @@ html {
   }
   
   pre {
-    @apply bg-gray-900 text-gray-200 p-4 rounded-lg overflow-x-auto my-4;
+    @apply bg-gray-900 text-gray-200 p-4 rounded-lg overflow-x-auto my-4 max-w-full;
   }
   
   pre code {
@@ -175,11 +175,17 @@ html {
   
   /* Tables */
   table {
-    @apply w-full border-collapse border border-gray-700 my-4;
+    @apply w-full border-collapse border border-gray-700 my-4 overflow-x-auto block max-w-full;
   }
   
   th, td {
     @apply border border-gray-700 px-4 py-2 text-left;
+  }
+  
+  @media (max-width: 640px) {
+    th, td {
+      @apply px-2 py-1 text-sm;
+    }
   }
   
   th {

@@ -55,7 +55,7 @@ export function ArticleDetail({ article }: ArticleDetailProps) {
       />
       <StructuredData {...generateFAQData()} />
       
-      <article className="max-w-4xl mx-auto">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <header className="mb-8">
           <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
             <span className="uppercase tracking-wider">{article.category}</span>
@@ -85,9 +85,9 @@ export function ArticleDetail({ article }: ArticleDetailProps) {
           </div>
         </header>
         
-        <section className="prose prose-invert max-w-none">
-          <div 
-            className="text-gray-300 leading-relaxed text-lg article-content"
+        <section className="prose prose-invert max-w-none overflow-x-hidden">
+          <div
+            className="text-gray-300 leading-relaxed text-lg article-content max-w-full"
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
         </section>
